@@ -4,25 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form id="registro" action="./processamento.php" method="post">
-        <input type="text" name="nome" id="" placeholder="Nome">
-        <input type="email" name="email" id="" placeholder="Email">
-        <input type="password" name="senha" name="senha" id="" placeholder="Senha">
-        <input type="submit" value="cadastrar">
-    </form>
-    <form action="./processamento.php" style="display:none">
-        <input type="text" name="nome" id="" placeholder="Nome">
-        <input type="password" name="senha" name="senha" id="" placeholder="Senha">
-        <input type="submit" value="entrar">
-    </form>
-    <button id="Entrar">Entrar</button>
-    <button id="Registro" style="display:none" >Registro</button>
-
+    <div id="janela-login">
+        <h1 id="TituloLogin">Faça seu Registro!</h1>
+        <form id="registro" action="./processamento.php" method="post">
+            <input class="inputs" type="text" name="nome" id="" placeholder="Nome">
+            <input class="inputs" type="email" name="email" id="" placeholder="Email">
+            <input class="inputs" type="password" name="senha" name="senha" id="" placeholder="Senha">
+            <input class="inputs" type="submit" value="cadastrar">
+        </form>
+        <form id="entrar" action="./processamento.php" style="display:none">
+            <input class="inputs" type="text" name="nome" id="" placeholder="Nome">
+            <input class="inputs" type="password" name="senha" name="senha" id="" placeholder="Senha">
+            <input class="inputs" type="submit" value="entrar">
+        </form>
+        <button id="botao-login">Entrar</button>
+    
+    </div>
     <script>
-        var botao = document.getElementById('#Entrar');
-        if()
+        const h1 = document.querySelector("#TituloLogin")
+        const botao = document.querySelector("#botao-login")
+        botao.addEventListener("click", MudaBotao)
+
+        function MudaBotao(){
+            if(botao.textContent === "Entrar" && botao.click){
+                botao.textContent = "Registro";
+                h1.textContent = "Faça seu Login!";
+                document.getElementById("registro").style.display = "none";
+                document.getElementById("entrar").style.display = "flex";
+            } else if(botao.textContent === "Registro" && botao.click) {
+                botao.textContent = "Entrar";
+                h1.textContent = "Faça seu Registro!";
+                document.getElementById("entrar").style.display = "none";
+                document.getElementById("registro").style.display = "flex";
+            }
+        }
     </script>
 </body>
 </html>

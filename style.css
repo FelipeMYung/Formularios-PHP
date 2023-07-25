@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --cor-principal: #430861;
+    --cor-secundaria: #ad3be6;
+    --cor-texto: #ffffff;
+}
+body{
+    background-color: var(--cor-principal);
+}
+#janela-login{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#TituloLogin{
+    margin: 30px;
+    color: var(--cor-texto);
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+.inputs{
+    border: gray 1px ridge;
+    border-radius: 15px;
+    height: 50px;
+    width: 350px;
+}
+.inputs::placeholder{
+    padding-left: 15px;
+}
+#botao-login{
+    background-color: var(--cor-secundaria);
+    border: gray 1px ridge;
+    border-radius: 15px;
+    height: 30px;
+    width: 80px;
+}
